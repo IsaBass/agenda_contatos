@@ -32,12 +32,15 @@ class ContactHelper {
     final databasesPath = await getDatabasesPath();
     final path = join(databasesPath, "contacts.db");
 
-    return await openDatabase(path, version: 1,
-        onCreate: (Database db, int newerVersion) async {
-      await db.execute(
-          "CREATE TABLE $contactTable($idColumn INTEGER PRIMARY KEY, $nameColumn TEXT,"
-          " $emailColumn TEXT, $phoneColumn TEXT, $imgColumn TEXT )");
-    });
+    return await openDatabase(
+      path,
+      version: 1,
+      onCreate: (Database db, int newerVersion) async {
+        await db.execute(
+            "CREATE TABLE $contactTable($idColumn INTEGER PRIMARY KEY, $nameColumn TEXT,"
+            " $emailColumn TEXT, $phoneColumn TEXT, $imgColumn TEXT )");
+      },
+    );
   }
 
   Future<Contact> saveContact(Contact contact) async {
@@ -83,8 +86,8 @@ class ContactHelper {
   Future<List> getAllContacts() async {
     Database dbContact = await db;
     List listMap = await dbContact.rawQuery("SELECT * FROM $contactTable");
-    List<Contact> listContact = List();
-    
+    List<Contact> listContact = [];
+
     for (Map m in listMap) {
       listContact.add(Contact.fromMap(m));
     }

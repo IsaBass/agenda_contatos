@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   ContactHelper helper = ContactHelper();
 
-  List<Contact> contacts = List();
+  List<Contact> contacts = [];
 
   @override
   void initState() {
@@ -104,7 +104,6 @@ class _HomePageState extends State<HomePage> {
                         ? FileImage(File(contacts[index].img))
                         : AssetImage('images/person.png'),
                     fit: BoxFit.cover,
-
                   ),
                 ),
               ),
@@ -228,8 +227,6 @@ class _HomePageState extends State<HomePage> {
         });
         break;
     }
-    setState(() {
-      
-    });
+    setState(() {});
   }
 }
