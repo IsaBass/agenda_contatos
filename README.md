@@ -23,6 +23,7 @@ App Agenda de Contatos, salvando dados em Base de Dados SQL Local SQLite;
 
 ##### Outros Projetos Flutter:
 ###### [DevQuiz #NLW5 RocketSeat](https://github.com/IsaBass/nlw5_devquiz) (SetState, ValueNotifier, AnimationBuilder, share_plus)
+###### [Chat OnLine Firebase](https://github.com/IsaBass/chat_firebase)  (Firebase, Google SignIn, camera)
 ###### [Buscador de gifs](https://github.com/IsaBass/buscador_gifs) (share, http, transparent_image)
 ###### [To-Do_Offline](https://github.com/IsaBass/todo_offline) (path_provider, json)
 ###### [Conversor de Moedas](https://github.com/IsaBass/conversor_moedas) (Dio, http)
